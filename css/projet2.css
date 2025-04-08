@@ -1,12 +1,55 @@
-/****** General ***********/
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
 * {
-    font-family: 'Raleway', sans-serif;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
 :root {
-    --main-color: #0065FC;
-    --main-bg-color: #F2F2F2;
-    --filter-bg-color: #DEEBFF;
+  --main-color: #0065FC;
+  --main-bg-color: #F2F2F2;
+  --filter-bg-color: #DEEBFF;
 }
 
 .fa-solid {
@@ -14,44 +57,39 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px 0 50px;
+
 }
 
-.logo {
-    justify-content: start;
-    height: 40px;
+.logo img {
+    height: 30px; 
 }
 
 .nav-links {
     display: flex;
     justify-content: flex-end;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+}
+.nav-links li {
+  list-style-type: none;
 }
 
 .nav-links a {
-    text-decoration: none;
     color: black;
-    padding: 10px 0;
+    padding: 10px 10px;
+    margin-top: 0;
     position: relative;
 }
 
-.nav-links a:hoover::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2px;
-    width:100%;
-    background-color: #0065FC;
+.nav-links a:hover {
+  border-top: 2px solid #0065FC;
 }
 
 .main-container {
