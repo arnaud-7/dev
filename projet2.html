@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div class="main-container"></div>
         <header>
             <nav class="header-nav">
                 <div class="logo">
@@ -28,19 +29,26 @@
         </header>
 
         <nav>
-            <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
+            <h2 class="nav-title">Trouvez votre hébergement pour des vacances de rêve</h2>
             <p>En plein centre-ville ou en pleine nature</p>
-            <div>
+            <div class="search-bar">
                 <form method="get" action="">
-                  <p>
-                            <label for="rechercher">ville :</label>
-                             <input type="text" name="ville" id="ville" placeholder="Marseille, France" required>
-                             <input type="submit" value="rechercher">
-                  </p>
+                            <label for="rechercher" class="icon"><i class="fa-sharp-duotone fa-solid fa-location-dot"></i><i class="fa-solid"></i></label>
+                             <input type="text" name="ville" id="ville" placeholder="Marseille, France" required class="ville">
+                             <input type="submit" value="Rechercher" required>
                 </form>
             </div>
-            <div></div>
-
+            <div class="filter">
+                <h3 class="filter-title">Filtres</h3>
+                <button class="filter-content filter-economy"><i class="fa-solid fa-money-bill-wave"></i><h3>Économique</h3></button>
+                <button class="filter-content filter-family"><i class="fa-solid fa-person"></i><h3>Familial</h3></button>
+                <button class="filter-content filter-romantic"><i class="fa-solid fa-heart"></i><h3>Romantique</h3></button>
+                <button class="filter-content filter-pepite"><i class="fa-solid fa-fire"></i><h3>Nos Pépites</h3></button>
+            </div>
+            <div class="infobar">  
+                <i class="fa-thin fa-circle-info"></i>
+                <p>Plus de 500 logements sont disponibles dans cette ville</p>
+            </div>
         </nav>
 
         <main>
